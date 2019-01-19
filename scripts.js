@@ -2,10 +2,10 @@ var bank = 0;
 var bank_withdrawAmount = "0";
 var bank_depositAmount = "0";
 var bank_initialAmount="0";
-var bank_withdraw = function (amount) {
+// var bank_withdraw = function (amount) {
     //Check if there is money
 
-var bank_deposit = function (amount) {
+// var bank_deposit = function (amount) {
     //Check if there is money
    
 var bank_initial = function (amount) {
@@ -27,6 +27,8 @@ function info(first, last) {
     this.deposit = deposit;
     this.withdraw= withdraw;
   }
+    	// } 
+    	// } 
   
   info.prototype.new_info = function() {
     return this.firstName + " " + this.lastName;
@@ -45,6 +47,7 @@ function info(first, last) {
   }
   
   // user interface logic
+  $(document).ready(function(){
   $(account).info(function() {
    
     $("form#bank_deposit").balance(function(event) {
@@ -64,11 +67,12 @@ function info(first, last) {
   
       $(".info").last().click(function() {
         $("#show-info").show();
-        $("#show-info h2").text(info.fullName());
+        $("#show-info h2").text(info.account());
         $(".first-name").text(info.firstName);
         $(".last-name").text(info.lastName);
         info.service.forEach(function(service) {
         });
     })
 })
-  
+})
+})
